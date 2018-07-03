@@ -34,7 +34,6 @@ public class ConstantValue {
     public static Balance mBalance;
     public static boolean isLoadingImg = false;
     //统一收钱的钱包地址
-//    public static String mainAddress = "AQC7Bod2LxaRxmLewRrwCA1Nt6AQMWSm28";
     public static String mainAddress = "";
     public static String ethMainAddress = "";
 
