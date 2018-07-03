@@ -207,12 +207,12 @@ dependencies {
     implementation files('libs/org.apache.http.legacy.jar')
     implementation files('libs/json-lib-2.4-jdk15.jar')
     implementation files('libs/wowoviewpager.aar')
+    implementation files('libs/RxTools-library-release.aar')
     implementation 'com.alibaba:fastjson:1.2.37'
     implementation 'org.greenrobot:greendao:3.2.2'
     implementation 'com.lzy.widget:view-core:0.1.5'
     implementation 'com.tencent.bugly:crashreport:2.6.6.1'
     implementation 'com.tencent.bugly:nativecrashreport:3.3.1'
-    implementation project(':RxTools-library')
     implementation project(':library')
     implementation 'net.zetetic:android-database-sqlcipher:3.5.7@aar'
     implementation 'com.kyleduo.switchbutton:library:2.0.0'

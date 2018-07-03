@@ -9,3 +9,4 @@ mylibrary
 .externalNativeBuild
 /.externalNativeBuild
 
+/app/src/main/java/com/stratagile/qlink/constant/MainConstant.java

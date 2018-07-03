@@ -17,7 +17,6 @@ import java.util.Map;
  */
 
 public class ConstantValue {
-    public static String unKownKeyButImportant = "";
     public static String ENVIRONMENT = "environment";
     public static String LOCALVERSIONCODE = "localversioncode";
     //升级到这个版本是否需要显示guest页面

@@ -4,6 +4,7 @@ import com.alibaba.fastjson.JSONObject;
 import com.socks.library.KLog;
 import com.stratagile.qlink.application.AppConfig;
 import com.stratagile.qlink.constant.ConstantValue;
+import com.stratagile.qlink.constant.MainConstant;
 import com.stratagile.qlink.entity.AssetsWarpper;
 import com.stratagile.qlink.entity.Balance;
 import com.stratagile.qlink.entity.BaseBack;
@@ -55,6 +56,8 @@ import okhttp3.MediaType;
 import okhttp3.MultipartBody;
 import okhttp3.RequestBody;
 import retrofit2.HttpException;
+
+import static com.stratagile.qlink.constant.MainConstant.MainAppid;
 
 /**
  * @author hu
@@ -541,15 +544,15 @@ public class HttpAPIWrapper {
     public static RequestBody addParams(Map<String, String> data) {
         Map<String, Object> map = new HashMap<>();
         if (SpUtil.getBoolean(AppConfig.getInstance(), ConstantValue.isMainNet, false)) {
-            map.put("appid", "WINQ");
+            map.put("appid", MainConstant.MainAppid);
             map.put("timestamp", Calendar.getInstance().getTimeInMillis() + "");
             map.put("params", JSONObject.toJSON(data));
-            map.put("sign", DigestUtils.getSignature((JSONObject) JSONObject.toJSON(map), "ca799da6e13cbf4732b41f050e6574d2eb17f75107da4f53e82c5e25870a91e7", "UTF-8"));
+            map.put("sign", DigestUtils.getSignature((JSONObject) JSONObject.toJSON(map), MainConstant.MainSign, "UTF-8"));
         } else {
             map.put("appid", "MIFI");
             map.put("timestamp", Calendar.getInstance().getTimeInMillis() + "");
             map.put("params", JSONObject.toJSON(data));
-            map.put("sign", DigestUtils.getSignature((JSONObject) JSONObject.toJSON(map), ConstantValue.unKownKeyButImportant, "UTF-8"));
+            map.put("sign", DigestUtils.getSignature((JSONObject) JSONObject.toJSON(map), MainConstant.unKownKeyButImportant, "UTF-8"));
         }
         KLog.i("传的参数为:" + map);
         MediaType textType = MediaType.parse("text/plain");
