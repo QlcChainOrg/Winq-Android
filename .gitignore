@@ -4,9 +4,5 @@ build
 .gradle/
 **/gradle/**
 *.iml
-greendao_java
-mylibrary
 .externalNativeBuild
-/.externalNativeBuild
-
 /app/src/main/java/com/stratagile/qlink/constant/MainConstant.java
